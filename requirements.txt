@@ -1,5 +1,5 @@
 # Django
-Django==3.1
+Django==3.1.1
 python-decouple==3.3
 
 # Database
@@ -9,3 +9,7 @@ psycopg2-binary==2.8.5
 
 # Images
 Pillow==7.2.0
+
+# Heroku
+django-heroku==0.3.1
+gunicorn==20.0.4
