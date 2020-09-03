@@ -32,9 +32,9 @@
                             <div class="body">
                                 <a href="profile.html">
                                     {% if user.userprofile.avatar %}
-                                        <img src="{{ user.userprofile.avatar.url }}" class="rounded-circle shadow " alt="Profile image">
+                                        <img width="250px" src="{{ user.userprofile.avatar.url }}" class="rounded-circle shadow " alt="Profile image">
                                     {% else %}
-                                        <img src="{% static 'assets/images/profile_av.jpg' %}" class="rounded-circle shadow " alt="Profile image">
+                                        <img width="250px" src="{% static 'assets/images/profile_av.jpg' %}" class="rounded-circle shadow " alt="Profile image">
                                     {% endif %}
                                 </a>
                                 <h4 class="m-t-10">{{ user }}</h4>

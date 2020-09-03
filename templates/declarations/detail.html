@@ -1,0 +1,123 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+  <style>
+      .table-hover tbody tr:hover {
+          color: #a0966b;
+      }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <section class="content">
+    <div class="body_scroll">
+      <div class="block-header">
+        <div class="row">
+          <div class="col-lg-7 col-md-6 col-sm-12">
+            <h2>Detalhes da Declaração</h2>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'dashboard' %}"><i class="zmdi zmdi-home"></i> Home</a></li>
+              <li class="breadcrumb-item active"><a href="{% url 'declarations_list' %}">Declarações</a></li>
+              <li class="breadcrumb-item active">Detalhes</li>
+            </ul>
+            <button class="btn btn-primary btn-icon mobile_menu" type="button">
+              <i class="zmdi zmdi-sort-amount-desc"></i></button>
+          </div>
+          <div class="col-lg-5 col-md-6 col-sm-12">
+
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row clearfix">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="body">
+                <h5><strong>Declaração ID: </strong> #000.262</h5>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                    <address>
+                      <strong>CBL Reciclagem</strong><br>
+                      RODOVIA MG 424,KM 31, NS SRA FATIMA, MATOZINHOS/MG<br>
+                      CEP: 35720-000 • Fone: 55-11-43468900
+                    </address>
+                  </div>
+                  <div class="col-md-6 col-sm-6 text-right">
+                    <p class="mb-0"><strong>Data: </strong> 08 de Maio de 2020</p>
+                    <p class="mb-0"><strong>Status: </strong> <span class="badge badge-success">CONCLUIDO</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <h5 class="mt-4">Relação de Notas</h5>
+                </div>
+                <div class="col-md-12">
+                  <div class="table-responsive">
+                    <table class="table table-hover c_table theme-color">
+                      <thead>
+                      <tr>
+                        <th>#</th>
+                        <th width="60px">Produto</th>
+                        <th></th>
+                        <th class="hidden-sm-down">Nota</th>
+                        <th>Data</th>
+                        <th class="hidden-sm-down">Quantidade</th>
+                        <th>Unidade</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td><img src="{% static 'assets/images/ecommerce/1.png' %}" width="40" alt="Product img"></td>
+                        <td>PNEUS INSERVIVEIS</td>
+                        <td class="hidden-sm-down">000002699</td>
+                        <td>14/03/2020</td>
+                        <td class="hidden-sm-down">10.480</td>
+                        <td>KG</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td><img src="{% static 'assets/images/ecommerce/1.png' %}" width="40" alt="Product img"></td>
+                        <td>PNEUS INSERVIVEIS</td>
+                        <td class="hidden-sm-down">000002713</td>
+                        <td>23/03/2020</td>
+                        <td class="hidden-sm-down">11.110</td>
+                        <td>KG</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h5>Declaração</h5>
+                    <p>Declaramos que recebemos da empresa FONSECA & LUZ COMERCIO DE PNEUS LTDA , com sede na RUA
+                      CIRCULAR 53 RIBEIRAO PRETO/SP, CEP: 14079-423, inscrita no CNPJ 13.630.193/0001-06, quantidade de
+                      21.590 quilo(s) do(s) residuo(s) denominado(s) PNEUS INSERVIVEIS referente(s) a(s) nota(s)
+                      relacionada(s), sendo que o(s) mesmo(s) for(am) triturado(s) e destinado(s) de maneira
+                      ambientalmente adequada.</p>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <ul class="list-unstyled">
+                      <li><strong>Total de notas:</strong> 2</li>
+                    </ul>
+                    <strong>Total em Quilos</strong>
+                    <h3 class="mb-0 text-success">21.590 KG</h3>
+                    <a href="javascript:void(0);" class="btn btn-primary"><i class="zmdi zmdi-download"></i> Baixar PDF</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
