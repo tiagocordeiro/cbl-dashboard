@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     # My Apps
     'core',
+    'declarations'
 ]
 
 MIDDLEWARE = [

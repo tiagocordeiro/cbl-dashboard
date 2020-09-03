@@ -22,6 +22,7 @@ from cbldashboard import settings
 admin.site.site_header = 'CBL Reciclagem'
 
 urlpatterns = [
+    path('declarations/', include('declarations.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('', include('core.urls')),

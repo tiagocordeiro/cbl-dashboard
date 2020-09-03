@@ -1,0 +1,106 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+  <style>
+      .table-hover tbody tr:hover {
+          color: #a0966b;
+      }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <section class="content">
+    <div class="body_scroll">
+      <div class="block-header">
+        <div class="row">
+          <div class="col-lg-7 col-md-6 col-sm-12">
+            <h2>Declarações Geradas</h2>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'dashboard' %}"><i class="zmdi zmdi-home"></i> Home</a></li>
+              <li class="breadcrumb-item active">Declarações</li>
+              <li class="breadcrumb-item active">Lista</li>
+            </ul>
+            <button class="btn btn-primary btn-icon mobile_menu" type="button">
+              <i class="zmdi zmdi-sort-amount-desc"></i></button>
+          </div>
+          <div class="col-lg-5 col-md-6 col-sm-12">
+
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row clearfix">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="table-responsive">
+                <table class="table table-hover c_table theme-color">
+                  <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Residuos</th>
+                    <th>Quilos</th>
+                    <th>Data</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>000.262</td>
+                    <td><strong><a href="{% url 'declaration_detail' %}">PNEUS INSERVIVEIS</a></strong></td>
+                    <td>21.590</td>
+                    <td><a href="javascript:void(0);">08 de Maio de 2020</a></td>
+                    <td>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-eye"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-print"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-email"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-download"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>000.262</td>
+                    <td><strong><a href="javascript:void(0);">PNEUS INSERVIVEIS</a></strong></td>
+                    <td>21.590</td>
+                    <td><a href="javascript:void(0);">08 de Maio de 2020</a></td>
+                    <td>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-eye"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-print"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-email"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-download"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>000.262</td>
+                    <td><strong><a href="javascript:void(0);">PNEUS INSERVIVEIS</a></strong></td>
+                    <td>21.590</td>
+                    <td><a href="javascript:void(0);">08 de Maio de 2020</a></td>
+                    <td>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-eye"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-print"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-email"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-download"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>000.262</td>
+                    <td><strong><a href="javascript:void(0);">PNEUS INSERVIVEIS</a></strong></td>
+                    <td>21.590</td>
+                    <td><a href="javascript:void(0);">08 de Maio de 2020</a></td>
+                    <td>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-eye"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-print"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-email"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="zmdi zmdi-download"></i></button>
+                    </td>
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
