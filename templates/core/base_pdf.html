@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html dir="ltr" lang="en" class="no-outlines">
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- ==== Document Title ==== -->
+    <title>{% block title %}Zumaq Partners{% endblock %}</title>
+
+  <!-- ==== Document Meta ==== -->
+  <meta name="author" content="Tiago Cordeiro">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- ==== Favicon ==== -->
+  <link rel="icon" href="{% static "favicon.png" %}" type="image/png">
+
+  <!-- Page Level Stylesheets -->
+  {% block extra_styles %}
+  {% endblock %}
+
+</head>
+<body>
+
+<!-- Wrapper Start -->
+<div class="wrapper">
+
+
+  <!-- Main Container Start -->
+
+  <main class="main--container">
+    <!-- Page Header Start -->
+    <section class="page--header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <!-- Page Title Start -->
+            <h2 class="page--title h5">{% block page-title %}Dashboard{% endblock %}</h2>
+            <!-- Page Title End -->
+
+            <ul class="breadcrumb">
+              {% block breadcrumb %}
+                <li class="breadcrumb-item active"><span>Dashboard</span></li>
+              {% endblock %}
+            </ul>
+          </div>
+
+          <div class="col-lg-6">
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Page Header End -->
+
+    <!-- Main Content Start -->
+    {% block content %}
+    {% endblock %}
+    <!-- Main Content End -->
+
+    <!-- Main Footer Start -->
+    <footer class="main--footer main--footer-light">
+      <p>Copyright &copy; <a target="_blank" href="https://www.mulhergorila.com/">Mulher Gorila</a></p>
+    </footer>
+    <!-- Main Footer End -->
+  </main>
+  <!-- Main Container End -->
+</div>
+<!-- Wrapper End -->
+
+<!-- Page Level Scripts -->
+{% block extra_scripts %}
+{% endblock %}
+
+</body>
+</html>

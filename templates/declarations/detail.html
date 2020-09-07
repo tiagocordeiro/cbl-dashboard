@@ -110,7 +110,9 @@
                     </ul>
                     <strong>Total em Quilos</strong>
                     <h3 class="mb-0 text-success">21.590 KG</h3>
-                    <a href="javascript:void(0);" class="btn btn-primary"><i class="zmdi zmdi-download"></i> Baixar PDF</a>
+                    <a href="{% url 'declaration_pdf_gen' %}">
+                      <button class="btn btn-primary"><i class="zmdi zmdi-download"></i> Baixar PDF</button>
+                    </a>
                   </div>
                 </div>
               </div>
