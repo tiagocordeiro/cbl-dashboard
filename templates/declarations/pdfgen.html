@@ -1,0 +1,182 @@
+{% extends "core/base_pdf.html" %}
+{% load static %}
+
+{% block title %}Declaração {{ pedido.get_status_display }} - CBL Reciclagem{% endblock %}
+{% block page-title %}Declaração{% endblock %}
+
+{% block extra_styles %}
+  <style type="text/css">
+      /*CSS para PDF*/
+      @page {
+          size: A4;
+          margin: 1cm;
+          @frame content_frame {
+          left: 50pt;
+          width: 512pt;
+          top: 50pt;
+          height: 692pt;
+      }
+      @frame footer_frame {
+      -pdf-frame-content:footer_content;
+      left: 50pt;
+      width: 512pt;
+      top: 745pt;
+      height: 70pt;
+      }
+      }
+
+      @page pedido {
+          size: A4;
+          margin: 1cm;
+          @frame content_frame {
+          left: 50pt;
+          width: 512pt;
+          top: 50pt;
+          height: 750pt;
+      }
+      }
+
+      .page--header, footer {
+          display: none;
+      }
+
+      th, td {
+          text-align: left;
+      }
+  </style>
+{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+  <li class="breadcrumb-item"><a href="#">Pedidos</a></li>
+  <li class="breadcrumb-item active"><span>Detalhes</span></li>
+{% endblock %}
+
+{% block content %}
+  <!-- Main Content Start -->
+  <section class="main--content">
+
+    <div class="panel">
+      <!-- Invoice Start -->
+      <table style="width: 100%;">
+        <tr>
+          <td style="text-align: center;">
+            <img src="https://cblreciclagem.com.br/wp-content/uploads/2020/09/CBL-s-e1599246151843.png" alt="CBL Reciclagem">
+          </td>
+
+        </tr>
+        <tr>
+          <td style="text-align: center; padding-top: 10pt;">
+            <h1 style="font-size: 24px;">DECLARAÇÃO</h1>
+          </td>
+        </tr>
+      </table>
+
+      <table style="width: 100%; padding: 10pt 0">
+        <tr>
+          <td style="text-align: right; padding-top: 10pt;">
+            <h2>000.262</h2>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p style="font-size: 14px; line-height: 1.5em; text-align: justify;">Declaramos que recebemos da empresa
+              FONSECA & LUZ COMERCIO DE PNEUS LTDA , com sede na RUA CIRCULAR 53 RIBEIRAO PRETO/SP, CEP: 14079-423,
+              inscrita no CNPJ 13.630.193/0001-06, quantidade de 21.590 quilo(s) do(s) residuo(s) denominado(s) PNEUS
+              INSERVIVEIS referente(s) a(s) nota(s) relacionada(s), sendo que o(s) mesmo(s) for(am) triturado(s) e
+              destinado(s) de maneira ambientalmente adequada.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p style="font-size: 14px; line-height: 1.5em;">São Bernardo do Campo 8 de Maio de 2020</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">
+            <h2>___________________________________________<br>Caio Marchi<br>Administrador</h2>
+          </td>
+        </tr>
+      </table>
+
+      <div id="pedido" class="invoice">
+
+
+        <div id="footer_content">
+          <table>
+            <tr>
+              <td style="text-align: center;">
+                <h2>CNPJ: 58.865.114/0004-27<br>Endereço: Rodovia MG 424,KM 31, NS SRA FATIMA, MATOZINHOS/MG, CEP:
+                  35720-000<br>Fone: 55-11-43468900</h2>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+      <!-- Invoice End -->
+    </div>
+
+    <pdf:nexttemplate name="pedido"></pdf:nexttemplate>
+    <pdf:nextpage></pdf:nextpage>
+
+    <table style="width: 100%;">
+      <tr>
+        <td>
+          <img src="https://cblreciclagem.com.br/wp-content/uploads/2020/09/CBL-s-e1599246151843.png" alt="CBL Reciclagem">
+        </td>
+        <td>
+          <h5 class="h5">CBL Reciclagem</h5>
+
+          <p>RODOVIA MG 424,KM 31, NS SRA FATIMA</p>
+          <p>MATOZINHOS/MG, CEP: 35720-000</p>
+          <p>Fone: 55-11-43468900</p>
+        </td>
+      </tr>
+    </table>
+
+    <table style="width: 100%; padding-top: 20px;">
+      <tr>
+        <td><h3>Relação de Notas</h3></td>
+      </tr>
+    </table>
+
+    <div class="invoice--order">
+      <table style="font-size: 16px;" class="table">
+        <thead>
+        <tr style="border-bottom: 1px solid #ddd;">
+          <th style="width: 200pt; text-align: left;">Produto</th>
+          <th>Nota</th>
+          <th>Data</th>
+          <th style="text-align: right;">Quantidade</th>
+          <th style="text-align: right;">UM</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr style="border-bottom: 1px solid #ddd; padding-top: 4px;">
+          <td style="white-space: nowrap;">PNEUS INSERVIVEIS</td>
+          <td>000002699</td>
+          <td>14/03/2020</td>
+          <td style="text-align: right;">10.480</td>
+          <td style="text-align: right;">KG</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #ddd; padding-top: 4px;">
+          <td>PNEUS INSERVIVEIS</td>
+          <td>000002713</td>
+          <td>23/03/2020</td>
+          <td style="text-align: right;">11.110</td>
+          <td style="text-align: right;">KG</td>
+        </tr>
+        {% for item in pedido_itens %}
+          <tr>
+            <td>{{ item.item }}</td>
+            <td style="text-align: center;">{{ item.quantidade }}</td>
+          </tr>
+        {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <!-- Main Content End -->
+{% endblock %}

@@ -11,14 +11,17 @@ psycopg2-binary==2.8.5
 Pillow==7.2.0
 
 # Sentry
-sentry-sdk==0.17.2
+sentry-sdk==0.17.3
 
 # Heroku
 django-heroku==0.3.1
 gunicorn==20.0.4
 
-# Storage (Cloudinary)
+# Cloudinary (storage)
 django-cloudinary-storage==0.3.0
 
-# AWS Storage
+# AWS (storage)
 django-s3-folder-storage==0.5
+
+# PDF
+xhtml2pdf==0.2.4
